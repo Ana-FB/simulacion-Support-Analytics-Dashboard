@@ -47,7 +47,7 @@ El modelo está compuesto por las siguientes tablas:
 | `first_response_time` | INTEGER   | Tiempo hasta la primera respuesta, en minutos.                                   |
 | `resolution_time`     | INTEGER   | Tiempo total hasta la resolución, en minutos.                                    |
 | `reopen_count`        | INTEGER   | Cantidad de veces que el caso fue reabierto.                                     |
-| `sla_met`             | BOOLEAN   | Indica si se cumplió el **es el compromiso de tiempo de respuesta y resolución establecido por la empresa para atender los casos de soporte.(SLA)** (`Yes`/`No`). |
+| `sla_met`             | BOOLEAN   | Indica si se cumplió el (SLA)**es el compromiso de tiempo de respuesta y resolución establecido por la empresa para atender los casos de soporte.** (`Yes`/`No`). |
 | `csat_score`          | INTEGER   | Puntuación de satisfacción del cliente (escala 1–5).                             |
 | `sentiment_score`     | INTEGER   | Puntaje de sentimiento del cliente (ej: -5 a 5).                                 |
 
