@@ -29,69 +29,75 @@ El objetivo del dataset es permitir la creación de un panel que mida:
 
 El modelo está compuesto por las siguientes tablas:
 
-### `support_conversations`
-Tabla principal con los registros de atención.
+---
 
-Campos principales:
-- `conversation_id`
-- `customer_id`
-- `agent_id`
-- `category_id`
-- `channel_id`
-- `issue_status`
-- `customer_issue`
-- `created_date`
-- `closed_date`
-- `first_response_time`
-- `resolution_time`
-- `reopen_count`
-- `sla_met`
-- `csat_score`
-- `sentiment_score`
+## 📁 Tabla: `support_conversations`
+
+| Columna               | Tipo      | Descripción                                                                      |
+| --------------------- | --------- | -------------------------------------------------------------------------------- |
+| `conversation_id`     | VARCHAR   | Identificador único de la conversación de soporte.                               |
+| `customer_id`         | VARCHAR   | ID del cliente que inició la consulta (FK hacia `customers`).                    |
+| `agent_id`            | VARCHAR   | ID del agente que atendió la conversación (FK hacia `agent`).                    |
+| `category_id`         | VARCHAR   | ID de la categoría del problema (FK hacia `categories`).                         |
+| `channel_id`          | VARCHAR   | ID del canal de entrada del caso (FK hacia `channels`).                          |
+| `issue_status`        | VARCHAR   | Estado actual del caso (`open`, `pending`, `resolved`, `closed`).                |
+| `customer_issue`      | TEXT      | Descripción textual del problema reportado por el cliente.                       |
+| `created_date`        | TIMESTAMP | Fecha y hora de creación del caso.                                               |
+| `closed_date`         | TIMESTAMP | Fecha y hora de cierre del caso.                                                 |
+| `first_response_time` | INTEGER   | Tiempo hasta la primera respuesta, en minutos.                                   |
+| `resolution_time`     | INTEGER   | Tiempo total hasta la resolución, en minutos.                                    |
+| `reopen_count`        | INTEGER   | Cantidad de veces que el caso fue reabierto.                                     |
+| `sla_met`             | BOOLEAN   | Indica si se cumplió el **es el compromiso de tiempo de respuesta y resolución establecido por la empresa para atender los casos de soporte.(SLA)** (`Yes`/`No`). |
+| `csat_score`          | INTEGER   | Puntuación de satisfacción del cliente (escala 1–5).                             |
+| `sentiment_score`     | INTEGER   | Puntaje de sentimiento del cliente (ej: -5 a 5).                                 |
 
 ---
 
-### `customers`
-Información de los clientes:
+## 👥 Tabla: `customers`
 
-- `customer_id`
-- `full_name`
-- `email`
-- `phone`
-- `registered_date`
-- `country_code`
-- `country_name`
-- `city`
-- `gender`
-- `age`
-
----
-
-### `agent`
-Información de agentes de soporte:
-
-- `agent_id`
-- `agent_name`
-- `role`
-- `specialty`
-- `agent_category_id`
+| Columna           | Tipo       | Descripción                                           |
+| ----------------- | ---------- | ----------------------------------------------------- |
+| `customer_id`     | VARCHAR    | Identificador único del cliente.                      |
+| `full_name`       | VARCHAR    | Nombre completo del cliente.                          |
+| `email`           | VARCHAR    | Correo electrónico.                                   |
+| `phone`           | VARCHAR    | Teléfono del cliente.                                 |
+| `registered_date` | DATE       | Fecha en que el cliente fue registrado en el sistema. |
+| `country_code`    | VARCHAR(2) | Código del país (ISO-2: AR, BR, MX, etc.).            |
+| `country_name`    | VARCHAR    | Nombre del país.                                      |
+| `city`            | VARCHAR    | Ciudad de residencia.                                 |
+| `gender`          | VARCHAR    | Género declarado.                                     |
+| `age`             | INTEGER    | Edad del cliente.                                     |
 
 ---
 
-### `channels`
-Canales de entrada:
+## 🎧 Tabla: `agent`
 
-- `channel_id`
-- `channel_name`
+| Columna             | Tipo    | Descripción                                                  |
+| ------------------- | ------- | ------------------------------------------------------------ |
+| `agent_id`          | VARCHAR | Identificador único del agente.                              |
+| `agent_name`        | VARCHAR | Nombre completo del agente.                                  |
+| `role`              | VARCHAR | Rol del agente (Junior, Senior, Supervisor).                 |
+| `specialty`         | VARCHAR | Especialidad del agente (Técnico, Facturación, Retención).   |
+| `agent_category_id` | VARCHAR | Categoría principal que atiende (relación con `categories`). |
 
 ---
 
-### `categories`
-Clasificación de los casos:
+## 🌐 Tabla: `channels`
 
-- `category_id`
-- `issue_category`
-- `sub_category`
+| Columna        | Tipo    | Descripción                                               |
+| -------------- | ------- | --------------------------------------------------------- |
+| `channel_id`   | VARCHAR | Identificador único del canal.                            |
+| `channel_name` | VARCHAR | Nombre del canal (Email, Chat, WhatsApp, Teléfono, etc.). |
+
+---
+
+## 🏷 Tabla: `categories`
+
+| Columna          | Tipo    | Descripción                                                          |
+| ---------------- | ------- | -------------------------------------------------------------------- |
+| `category_id`    | VARCHAR | Identificador único de la categoría.                                 |
+| `issue_category` | VARCHAR | Categoría principal del caso (Ej: Facturación, Soporte Técnico).     |
+| `sub_category`   | VARCHAR | Subcategoría específica (Ej: Error de pago, Recupero de contraseña). |
 
 ---
 
