@@ -1,7 +1,7 @@
 # ⚙️ Support Analytics Dataset
 
 
-![](https://img.shields.io/badge/Enlace-Support_Analytics_Dashboard-4285F4?style=flat&logo=looker&logoColor=white)
+[![](https://img.shields.io/badge/Enlace-Support_Analytics_Dashboard-4285F4?style=flat&logo=looker&logoColor=white)](https://lookerstudio.google.com/s/hXdoQ2jIcug)
 
 [![](https://img.shields.io/badge/Documentación_del_proyecto-black?style=flat&logo=notion)](https://grizzled-hardcover-758.notion.site/Documentaci-n-del-Proyecto-Support-Analytics-Dashboard-2c5300d4e78680198ac4f407400a9b94)
 
