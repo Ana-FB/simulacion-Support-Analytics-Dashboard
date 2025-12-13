@@ -1,7 +1,11 @@
 # ⚙️ Support Analytics Dataset
 
-## Sector de Negocio
-Cross-Industry
+
+![](https://img.shields.io/badge/Enlace-Support_Analytics_Dashboard-4285F4?style=flat&logo=looker&logoColor=white)
+
+[![](https://img.shields.io/badge/Documentación_del_proyecto-black?style=flat&logo=notion)](https://grizzled-hardcover-758.notion.site/Documentaci-n-del-Proyecto-Support-Analytics-Dashboard-2c5300d4e78680198ac4f407400a9b94)
+
+▶️ **Sector de Negocio:** Cross-Industry
 
 ---
 
@@ -122,6 +126,11 @@ Este dataset permite cumplir con los siguientes puntos de la simulación:
 
 ---
 
-## 📌 Nota
+## 📊 Gráficos
 
-Este dataset es **100% ficticio**, creado exclusivamente para fines de simulación, práctica y análisis de datos.
+![](https://i.imgur.com/aykj3ot.png)
+![](https://i.imgur.com/dqmESJ4.png)
+![](https://i.imgur.com/ThTTTN1.png)
+![](https://i.imgur.com/Mz1MEzE.png)
+![](https://i.imgur.com/2F5pntD.png)
+
